@@ -16,11 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    # - name: Use Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: '18.x'
-    # - run: npm install --omit=dev
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '16.x'
+    - run: npm install --prod
 
     - name: Sonatype Lifecycle SCA Scan
       uses: sonatype-nexus-community/iq-github-action@master

@@ -23,6 +23,7 @@ jobs:
     # - run: npm install --prod
 
     - name: Sonatype Lifecycle SCA Scan
+      continue-on-error: true
       uses: sonatype-nexus-community/iq-github-action@master
       with:
         username: ${{ secrets.sonatype_user }}

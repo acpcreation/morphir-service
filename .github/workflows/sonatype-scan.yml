@@ -26,7 +26,6 @@ jobs:
         stage: ${{ env.SonatypeStage }}
         target: . ${{ env.ExcludeDirectory }}
 
-
     - name: Retrieve Sonatype SBOM (SPDX)
       if: always()
       run: |
@@ -42,7 +41,7 @@ jobs:
         cat reports/$SonatypeAppId.spdx.json
 
     - name: Upload Sonatype SBOM (SPDX)
-      if: ${{ always() }}
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.SonatypeAppId }} Sonatype SBOM (SPDX) 
